@@ -51,6 +51,10 @@ def starte_flask():
 threading.Thread(target=anzeige, daemon=True).start()
 threading.Thread(target=starte_flask, daemon=True).start()
 
-# Hauptthread: Eingabe in Endlosschleife
-while True:
-    text = input("Neuer Text: ")
+# Hauptthread:
+try:
+    while True:
+        time.sleep(1)
+except KeyboardInterrupt:
+    print("Beendet")
+
